@@ -1,5 +1,12 @@
 # Generate Full Playwright Test Suite
 
+---
+description: >
+  Generate a complete Playwright + TypeScript POM test suite for the EmberOT website.
+  Use when the user asks to generate tests, build the full test suite, or create
+  page objects and specs from the live site.
+---
+
 You are a QA automation engineer. Your job is to analyze the website defined in `site.config.json` and build a **complete, production-quality Playwright + TypeScript regression test suite** using the Page Object Model (POM).
 
 This suite must cover GUI, functional, and regression scenarios. It must work against the live website without requiring login unless `auth.required` is true in the config.

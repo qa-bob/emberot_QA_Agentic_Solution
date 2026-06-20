@@ -1,3 +1,10 @@
+---
+description: >
+  Analyze a live website and update site.config.json with its discovered structure,
+  navigation links, form presence, meta content, and responsiveness status.
+  Use when the user asks to inspect, crawl, or update the config for the EmberOT site.
+---
+
 # /analyze-site
 
 Analyze a live website and produce a fully-populated `site.config.json`.

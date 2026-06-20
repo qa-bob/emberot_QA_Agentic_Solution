@@ -1,3 +1,10 @@
+---
+description: >
+  Parse the last Playwright test run and display a structured summary of results,
+  failed tests, flaky tests, and suggested next steps.
+  Use when the user asks for a test report, test results, or a summary of what passed or failed.
+---
+
 # /generate-report
 
 Open the Playwright HTML report and display a structured summary of test results.

@@ -1,0 +1,100 @@
+name: Test Failure Report
+description: Report a failing or flaky Playwright test
+labels: ["bug", "test-failure"]
+assignees: [rosmall]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to report a test that is consistently failing or producing unreliable (flaky) results.
+        For a new test coverage request, use the **Test Coverage Request** template instead.
+
+  - type: input
+    id: test-name
+    attributes:
+      label: Test name
+      description: The full test name as it appears in the Playwright report
+      placeholder: "navigation > all nav links are reachable (no 404s)"
+    validations:
+      required: true
+
+  - type: input
+    id: test-file
+    attributes:
+      label: Test file
+      description: Path to the spec file
+      placeholder: "tests/navigation/nav-links.spec.ts"
+
+  - type: dropdown
+    id: test-category
+    attributes:
+      label: Test category
+      options:
+        - "@smoke"
+        - "@navigation"
+        - "@forms"
+        - "@functional"
+        - "@visual"
+        - "@responsive"
+        - "@custom"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Affected browser project(s)
+      multiple: true
+      options:
+        - chromium-desktop
+        - mobile-chrome
+        - tablet
+        - All projects
+    validations:
+      required: true
+
+  - type: dropdown
+    id: failure-type
+    attributes:
+      label: Failure type
+      options:
+        - Consistent failure (fails every run)
+        - Flaky (sometimes passes, sometimes fails)
+        - Visual regression (screenshot mismatch)
+        - TypeScript / compilation error
+    validations:
+      required: true
+
+  - type: textarea
+    id: error
+    attributes:
+      label: Error message
+      description: Paste the full error output from Playwright
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: What did you do before the failure?
+      placeholder: |
+        1. Run npm run test:navigation
+        2. Observe failure on second test
+    validations:
+      required: true
+
+  - type: textarea
+    id: site-change
+    attributes:
+      label: Known site change?
+      description: Did the EmberOT website change recently? If so, describe what changed.
+      placeholder: "The nav menu was restructured — 'Solutions' was split into two pages"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context
+      description: CI run link, screenshot, or any other relevant information

@@ -1,3 +1,17 @@
+---
+name: test-generator
+description: >
+  Use when generating site-specific Playwright test files for the EmberOT website.
+  Auto-invoked when the user runs /generate-full-suite, asks to write tests for a
+  specific page or feature, or requests regression coverage for a bug.
+model: claude-sonnet-4-6
+tools:
+  - Read
+  - Write
+  - WebFetch
+  - Bash
+---
+
 # Agent: test-generator
 
 ## Role

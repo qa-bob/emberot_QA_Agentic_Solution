@@ -1,0 +1,84 @@
+name: Test Coverage Request
+description: Request new Playwright test coverage for a feature or page
+labels: ["enhancement", "test-request"]
+assignees: [rosmall]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to request new test coverage for a feature, page, or user flow on the EmberOT website.
+        The `test-generator` Claude Code agent will use this information to generate the tests automatically.
+
+  - type: input
+    id: page-url
+    attributes:
+      label: Page or feature URL
+      description: The full URL of the page or feature to test
+      placeholder: "https://www.emberot.com/solutions"
+    validations:
+      required: true
+
+  - type: input
+    id: feature-name
+    attributes:
+      label: Feature or page name
+      description: A short descriptive name for the feature
+      placeholder: "OT Security Solutions page — solution category cards"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: test-types
+    attributes:
+      label: Test types needed
+      description: Select all that apply
+      options:
+        - label: "`@smoke` — basic load, title, no JS errors"
+        - label: "`@navigation` — links, routing, breadcrumbs"
+        - label: "`@forms` — form fields and validation (no submission)"
+        - label: "`@functional` — business logic, interactive elements"
+        - label: "`@visual` — screenshot regression baseline"
+        - label: "`@responsive` — layout at mobile/tablet/desktop"
+    validations:
+      required: true
+
+  - type: textarea
+    id: scenarios
+    attributes:
+      label: Specific scenarios to cover
+      description: Describe what should be tested. Be as specific as possible.
+      placeholder: |
+        - All solution category cards are visible
+        - Each card has a heading, description, and CTA link
+        - CTA links navigate to the correct sub-page
+        - On mobile, cards stack vertically
+        - No horizontal overflow at 390px viewport
+    validations:
+      required: true
+
+  - type: textarea
+    id: interactive-elements
+    attributes:
+      label: Interactive elements
+      description: List any accordions, tabs, modals, carousels, or video players on the page
+      placeholder: |
+        - FAQ accordion at the bottom of the page
+        - Video embed in the hero section
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High — core page or conversion-critical feature
+        - Medium — important but not blocking
+        - Low — nice to have
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Anything else the test author should know

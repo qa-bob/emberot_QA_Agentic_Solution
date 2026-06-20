@@ -1,0 +1,24 @@
+# CODEOWNERS — EmberOT QA Agentic Solution
+# All changes require review from the QA lead.
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for everything in the repo
+* @rosmall
+
+# Playwright and TypeScript config — require QA lead sign-off
+playwright.config.ts @rosmall
+tsconfig.json @rosmall
+package.json @rosmall
+package-lock.json @rosmall
+
+# Site config — drives all test behavior
+site.config.json @rosmall
+
+# Claude Code configuration — agent and skill definitions
+.claude/ @rosmall
+
+# CI/CD pipelines
+.github/workflows/ @rosmall
+
+# Visual regression snapshots — require explicit review before merge
+__snapshots__/ @rosmall

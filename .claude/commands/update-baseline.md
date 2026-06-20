@@ -1,3 +1,9 @@
+---
+description: >
+  Capture new visual regression baseline screenshots after intentional site design changes.
+  Use when the user asks to update baselines, refresh screenshots, or reset visual snapshots.
+---
+
 # /update-baseline
 
 Capture new visual regression baseline screenshots after intentional design changes.

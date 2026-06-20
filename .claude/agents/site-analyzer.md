@@ -1,3 +1,17 @@
+---
+name: site-analyzer
+description: >
+  Use when analyzing a live website to discover its structure, navigation, forms, and content.
+  Auto-invoked when the user runs /analyze-site or asks to inspect, audit, or update the
+  site.config.json for the EmberOT website.
+model: claude-sonnet-4-6
+tools:
+  - Read
+  - Write
+  - WebFetch
+  - Bash
+---
+
 # Agent: site-analyzer
 
 ## Role
